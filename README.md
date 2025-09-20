@@ -26,8 +26,6 @@ By the end, I hope to understand:
 4. **Dry‑Run by default**: prints what it *would* do. Actions require `--apply` or an explicit confirmation node.
 5. **Human‑in‑the‑Loop**: the graph pauses for confirmation before mutating emails (unless `--force`).
 
-> You can learn incrementally: start read‑only (safe), then add actions.
-
 ## Educational Checklist
 
 * [ ] Define `AgentState` (pydantic) and ensure every node reads/writes it.
