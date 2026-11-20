@@ -1,0 +1,29 @@
+# Copy this file to config.toml and fill it in. config.toml is gitignored:
+# real addresses, names and paths only ever live there.
+
+dry_run = true            # show what would happen; change nothing in Gmail
+
+[gmail]
+label_prefix = "agent/"   # every label the agent creates starts with this
+
+[notify.telegram]
+# The token and chat id are read from these environment variables,
+# never written in this file.
+token_env = "INBOX_AGENT_TELEGRAM_TOKEN"
+chat_id_env = "INBOX_AGENT_TELEGRAM_CHAT_ID"
+quiet_hours = "23:00-07:00"
+
+[important]
+# Mail from these senders always notifies. Use real values in config.toml.
+senders = ["someone@example.com"]
+domains = ["example-bank.com"]   # checked together with DKIM, so spoofs fail
+
+[model]
+provider = "anthropic"
+name = "claude-haiku-5-5"
+api_key_env = "ANTHROPIC_API_KEY"
+
+[people]
+# Where "who am I waiting on" comes from. Leave empty to skip that check.
+adapter = ""
+path = ""
